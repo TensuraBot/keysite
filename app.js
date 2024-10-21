@@ -8,6 +8,9 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
+app.get('/', (req, res) => {
+    res.redirect('/auth/login');
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({

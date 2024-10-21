@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Keys</title>
+</head>
+<body>
+    <h1>Manage API Keys</h1>
+    <form action="/keys/add" method="POST">
+        <input type="text" name="keyValue" placeholder="New Key" required>
+        <button type="submit">Add Key</button>
+    </form>
+    <ul>
+        <% keys.forEach(key => { %>
+            <li><%= key.keyValue %></li>
+        <% }) %>
+    </ul>
+    <a href="/auth/logout">Logout</a>
+</body>
+</html>
